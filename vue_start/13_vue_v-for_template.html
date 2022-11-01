@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(fruit, idx) in fruits">{{idx}} - {{fruit}}</li>
+    </ul>
+    {{ message }}
+    <ul>
+      <template v-for="(todo, idx) in todos">
+        <span :key="`todo-${idx + 1}`"></span>
+        <li v-if="!todo.completed">{{ idx + 1 }} - {{ todo.context }}</li>
+      </template>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: '친해지고 싶지 않은 것들..?',
+        fruits: ['apple', 'banana', 'coconut'],
+        todos: [
+          {id: 1, context: '공식문서', completed: false},
+          {id: 2, context: '오류', completed: false},
+          {id: 3, context: '너!!!', completed: false},
+        ],
+      },
+    })
+  </script>
+</body>
+</html>
