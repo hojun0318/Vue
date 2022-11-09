@@ -306,3 +306,12 @@ export default {
 - "instance마다 각각의 Lifecycle을 가지고 있기 때문"
 
 ## Todo with Vuex
+
+
+state = data
+
+getters = computed
+
+mutations = state 조작
+
+actions = methods
